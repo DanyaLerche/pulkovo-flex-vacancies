@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Мобильная адаптация страницы вакансий Pulkovo Flex"
+    />
+    <title>Pulkovo Flex | Вакансии</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="vacancies-page">
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <button class="brand-button" type="button" aria-label="Pulkovo Flex">
+          Pulkovo Flex
+        </button>
+
+        <nav class="desktop-nav authed-nav" aria-label="Основная навигация">
+          <button class="nav-button" type="button">О проекте</button>
+          <button class="nav-button nav-button-active" type="button">
+            Вакансии
+          </button>
+          <button class="nav-button" type="button">Резюме</button>
+          <button class="nav-button" type="button">Отклики</button>
+        </nav>
+
+        <div class="header-actions authed-actions">
+          <button class="notification-button" type="button" aria-label="Уведомления">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path
+                d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+              <path
+                d="M13.7 21a2 2 0 0 1-3.4 0"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+          <button class="header-text-button" type="button" data-profile-target>
+            Профиль
+          </button>
+          <button class="header-text-button" type="button" data-logout-target>
+            Выйти
+          </button>
+          <button class="profile-button" type="button" aria-label="Профиль" data-profile-target>
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path
+                d="M20 21a8 8 0 1 0-16 0"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="2"
+              />
+              <circle
+                cx="12"
+                cy="8"
+                r="4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Открыть меню"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            data-menu-toggle
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="menu-overlay" id="mobile-menu" data-menu-overlay hidden>
+      <div class="menu-backdrop" data-menu-close></div>
+      <aside class="menu-panel" aria-label="Мобильное меню">
+        <div class="menu-topline">
+          <button class="brand-button" type="button">Pulkovo Flex</button>
+          <button
+            class="menu-close"
+            type="button"
+            aria-label="Закрыть меню"
+            data-menu-close
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path
+                d="M18 6 6 18M6 6l12 12"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="menu-links">
+          <button class="menu-link" type="button">О проекте</button>
+          <button class="menu-link menu-link-current" type="button">Вакансии</button>
+          <button class="menu-link" type="button">Резюме</button>
+          <button class="menu-link" type="button">Отклики</button>
+          <button class="menu-link" type="button" data-profile-target>Профиль</button>
+          <button class="menu-link menu-link-primary" type="button" data-logout-target>
+            Выйти
+          </button>
+        </div>
+      </aside>
+    </div>
+
+    <main class="page-shell">
+      <section class="vacancies-section" aria-labelledby="vacancies-title">
+        <div class="section-heading">
+          <div>
+            <h1 id="vacancies-title">Вакансии</h1>
+          </div>
+          <p class="vacancy-count" data-vacancy-count></p>
+        </div>
+
+        <div class="vacancy-grid" data-vacancy-list></div>
+      </section>
+    </main>
+
+    <script src="./data.js"></script>
+    <script src="./common.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
